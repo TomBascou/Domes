@@ -6,8 +6,10 @@ import java.util.List;
 import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 import frdomeswww.entity.Login;
+import frdomeswww.entity.User;
 
 public class LoginDaoMoc {
+	static int indexlogin = 1;
 	
 	private List<Login> logins = new ArrayList();
 	public LoginDaoMoc() {
@@ -16,13 +18,21 @@ public class LoginDaoMoc {
 		logins.add(new Login("Valentine","prout",3));
 		logins.add(new Login("Ilyas","prout",4));
 	}
-
-	public String isValid(String login,String password) {
+	
+	public int isValid(String login,String password) {
 	 for (Login l : logins) {
 		if(l.getLogin().equals(login)&&l.getPassword().equals(password)) {
 			return l.getToken();
-		} return "pas bon";
+		}
 	}
+	return 0;
 	}
-	q
+	
+	public void createLogin(Login nouvLogin) {
+		nouvLogin.setToken(indexlogin);
+		indexlogin++;
+		logins.add(nouvLogin);
+		
+	}
+	
 }
