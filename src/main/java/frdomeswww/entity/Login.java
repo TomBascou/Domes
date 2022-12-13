@@ -5,7 +5,7 @@ public class Login {
 	private String password;
 	private String token;
 	
-	public Login() {
+	public Login(String string, String string2, int i) {
 		super();
 	}
 	
