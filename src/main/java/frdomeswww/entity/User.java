@@ -3,13 +3,13 @@ package frdomeswww.entity;
 import java.util.Date;
 
 public class  User{
-	private int id;
-	private String lname;
-	private String fname;
-	private String mail;
-	private String tel;
-	private Date CreationDate;
-	private String token;
+	protected int id;
+	protected String lname;
+	protected String fname;
+	protected String mail;
+	protected String tel;
+	protected Date CreationDate;
+	protected int token;
 	
 	@Override
 	public String toString() {
@@ -20,6 +20,18 @@ public class  User{
 
 	public User() {
 		super();
+	}
+
+
+	public User(int id, String lname, String fname, String mail, String tel, Date creationDate, int token) {
+		super();
+		this.id = id;
+		this.lname = lname;
+		this.fname = fname;
+		this.mail = mail;
+		this.tel = tel;
+		CreationDate = creationDate;
+		this.token = token;
 	}
 
 

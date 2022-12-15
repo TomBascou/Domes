@@ -1,5 +1,5 @@
 package frdomeswww.service;
 
-public class Dbo {
+public class GestionProduit {
 
 }

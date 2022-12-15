@@ -3,9 +3,9 @@ package frdomeswww.entity;
 public class Login {
 	private String login;
 	private String password;
-	private String token;
+	private int token;
 	
-	public Login() {
+	public Login(String string, String string2, int i) {
 		super();
 	}
 	
@@ -21,10 +21,10 @@ public class Login {
 	public final void setPassword(String password) {
 		this.password = password;
 	}
-	public final String getToken() {
+	public final int getToken() {
 		return token;
 	}
-	public final void setToken(String token) {
+	public final void setToken(int token) {
 		this.token = token;
 	}
 	
