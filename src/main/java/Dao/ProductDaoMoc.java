@@ -9,11 +9,11 @@ import frdomeswww.entity.Login;
 import frdomeswww.entity.Produit;
 import frdomeswww.entity.Reptile;
 
-public class PanierDaoMoc {
+public class ProductDaoMoc {
     static int indexPanier = 1;
     
     private List<Produit> products = new ArrayList();
-    public PanierDaoMoc() {
+    public ProductDaoMoc() {
         super();
         products.add(new Chien(1, "rox", "Un bon ptit gars", 47, 7, "Chien", "7",
         		"Chien1","husky","doux"));

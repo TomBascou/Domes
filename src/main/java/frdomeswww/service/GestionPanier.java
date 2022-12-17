@@ -1,11 +1,9 @@
 package frdomeswww.service;
 
-public class GestionPanier {
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpSession;
+import Dao.ProductDaoMoc;
 
+public class GestionPanier {
 	
-	
-	
-	private void AddProduct(int idProduct) {
-		
-	}
 }
