@@ -1,9 +1,11 @@
 package frdomeswww.entity;
 
 public class Chien extends Produit{
-	public Chien() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Chien(int id, String name, String descript, int price, int size, String species, String age,
+			String reference, String breed, String coat) {
+		super(id, name, descript, price, size, species, age, reference);
+		this.breed = breed;
+		this.coat = coat;
 	}
 	
 	private String breed;

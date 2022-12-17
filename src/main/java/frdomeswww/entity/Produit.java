@@ -24,6 +24,20 @@ public String toString() {
 }
 
 
+public Produit(int id, String name, String descript, int price, int size, String species, String age,
+		String reference) {
+	super();
+	this.id = id;
+	this.name = name;
+	this.descript = descript;
+	this.price = price;
+	this.size = size;
+	this.species = species;
+	this.age = age;
+	this.reference = reference;
+}
+
+
 public final int getId() {
 	return id;
 }
