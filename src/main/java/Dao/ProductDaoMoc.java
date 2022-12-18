@@ -27,7 +27,6 @@ public class ProductDaoMoc {
     	for (Produit p : products) {
            if(p.getId() == idProduit) {
         	   //rajouter en session
-        	   System.out.println(p);
         	   return p;
            }
        }

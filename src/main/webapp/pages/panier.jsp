@@ -1,11 +1,21 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="frdomeswww.service.ServicePanier"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
+<jsp:useBean id="sp" class="frdomeswww.service.ServicePanier" scope = "session"/>
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../panier/panier.css">
+    <link href="asset/css/panier.css" rel="stylesheet" >
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="../panier/panier.js"></script>
     <title>Document</title>
 </head>
@@ -14,8 +24,9 @@
 
     <main>
         <div class="basket">
+
             <div class="basket-module">
-                <label for="promo-code">Entrer un code promotionnel</label>
+                <label for="promo-code"></label>
                 <input class="input promo-code-field" id="promo-code" type="text" name="promo-code" maxlength="5">
                 <button class="button promo-code-cta">Valider</button>
             </div>
@@ -23,74 +34,34 @@
                 <ul class="ul">
                     <li class="li item item-heading">Produit(s)</li>
                     <li class="li price">Prix</li>
-                    <li class="li quantity">Quantitée(s)</li>
+                    <li class="li quantity">QuantitÃ©e(s)</li>
                     <li class="li subtotal">Sous-total</li>
                 </ul>
             </div>
-
+			 
             <div class="basket-product">
+            <c:forEach var ="i" items ="${panier}">
                 <div class="item">
                     <div class="product-image">
                         <img src="https://via.placeholder.com/120x66" alt="Placholder Image 2" class=" img product-frame">
                     </div>
                     <div class="product-details">
-                        <h6><span class="item-quantity">4 x</span> Staffie</h6>
-                        <p class="p">Orka, 18 mois</p>
-                        <p class="p">Vacciné(e) : Oui</p>
+                        <h6><span class="item-quantity">1 x</span> <c:out value ="${i.breed}"/></h6>
+                        <p class="p"><c:out value ="${i.name}"/>, <c:out value ="${i.coat}"/> ans</p>
+                        <p class="p">VaccinÃ©(e) : Oui</p>
                     </div>
                 </div>
-                <div class="price">750.00</div>
+                <div class="price"><c:out value ="${i.price}"/></div>
                 <div class="quantity">
-                    <input type="number" value="4" min="1" class="quantity-field">
+                    <input type="number" value="1" min="1" max="1" class="quantity-field">
                 </div>
-                <div class="subtotal">3000.00</div>
                 <div class="remove">
                     <button>Supprimer</button>
                 </div>
+                </c:forEach>
             </div>
-
-            <div class="basket-product">
-                <div class="item">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/120x66" alt="Placholder Image 2" class=" img product-frame">
-                    </div>
-                    <div class="product-details">
-                        <h6><span class="item-quantity">1 x</span> Rottweiller</h6>
-                        <p class="p">Nala, 6 ans</p>
-                        <p class="p">Vacciné(e) : Oui</p>
-                    </div>
-                </div>
-                <div class="price">200.00</div>
-                <div class="quantity">
-                    <input type="number" value="4" min="1" class="quantity-field">
-                </div>
-                <div class="subtotal">200.00</div>
-                <div class="remove">
-                    <button>Supprimer</button>
-                </div>
-            </div>
-
-            <div class="basket-product">
-                <div class="item">
-                    <div class="product-image">
-                        <img src="https://via.placeholder.com/120x66" alt="Placholder Image 2" class=" img product-frame">
-                    </div>
-                    <div class="product-details">
-                        <h6><span class="item-quantity">1 x</span> Staff</h6>
-                        <p class="p">Izi, 3 mois</p>
-                        <p class="p">Vacciné(e) : Oui</p>
-                    </div>
-                </div>
-                <div class="price">1200.00</div>
-                <div class="quantity">
-                    <input type="number" value="4" min="1" class="quantity-field">
-                </div>
-                <div class="subtotal">1200.00</div>
-                <div class="remove">
-                    <button>Supprimer</button>
-                </div>
-            </div>
-
+			
+			
         </div>
         <aside>
             <div class="summary">
@@ -106,7 +77,7 @@
                 <div class="summary-delivery">
                     <select name="delivery-collection" class="summary-delivery-selection">
                         <option value="0" selected="selected">Choix livraison</option>
-                        <option value="collection">Livraison 1 à 2 semaines</option>
+                        <option value="collection">Livraison 1 Ã  2 semaines</option>
                         <option value="first-class">Livraison 72h</option>
                         <option value="second-class">Livraison 48h</option>
                         <option value="signed-for">Livraison 24h</option>
