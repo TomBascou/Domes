@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import Dao.ProductDaoMoc;
 
-@WebServlet("/panier")
+@WebServlet("/Panier")
 public class Panier extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,9 +27,10 @@ public class Panier extends HttpServlet {
 			int idProduct= Integer.parseInt(recup);
 			if(dao.getProduct(idProduct) != null) {
 				HttpSession session = request.getSession();
-				session.setAttribute("produit" + idProduct, dao.getProduct(idProduct));	
+				session.setAttribute("produit", dao.getProduct(idProduct));	
+				System.out.println(session.getAttribute("produit"));
 		}
-			getServletContext().getRequestDispatcher("pages/panier.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/pages/panier.jsp").forward(request, response);
 
 	}
 	

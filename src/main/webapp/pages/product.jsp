@@ -21,8 +21,8 @@
                         <h3>Paf le chien</h3>
                         <hr>
                         <p class="product-price">€1199.00</p>
-                        <form action="panier" class="add-inputs" method="post" >
-                            <input type="number" class="form-control" id="cart_quantity" name="idProduit" value="1" hidden="true">
+                        <form action="../Panier" class="add-inputs" method="post" >
+                            <input type="number" class="form-control" id="cart_quantity" name="idProduit" value="1">
                             <button type="submit" class="mt-2 btn btn-primary btn-lg">Ajouter au panier</button>
                         </form>
                         <br>
