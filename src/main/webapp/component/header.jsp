@@ -6,7 +6,9 @@
                 <div class="header--logo">
                     <img src="${pageContext.servletContext.contextPath}/asset/images/multi-page/logo.png" alt="domes">
                 </div>
+                <a href="${pageContext.servletContext.contextPath}/index.jsp" class="h2--no-style">
                 <h2>domes</h2>
+                </a>
                 <div class="profil">
                     <div class="navbar fixed-top">
                         <div class="container-fluid">
@@ -131,10 +133,11 @@
                             </div>
                         </div>
                     </div>
-                    <a class="profil-none" href="#">Connexion</a>
+                    <a class="profil-none" href="${pageContext.servletContext.contextPath}/pages/connexion.jsp">Connexion</a>
                     <span class="profil-none"> | </span>
                     <a class="profil-none" href="#">Inscription</a>
-                    <a class="profil-none" href="/domes/pages/panier.jsp">Panier</a>
+                    <span class="profil-none"> | </span>
+                    <a class="profil-none" href="${pageContext.servletContext.contextPath}/pages/panier.jsp">Panier</a>
                 </div>
             </div>
             <div class="flex--header">

@@ -10,18 +10,25 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="asset/css/panier.css" rel="stylesheet" >
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    <script src="../panier/panier.js"></script>
-    <title>Document</title>
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/asset/css/panier.css">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/asset/css/header.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/asset/css/footer.css">
+    <script src="${pageContext.servletContext.contextPath}/asset/script/index.js" defer></script>
+    
+    <title>Domes - Panier</title>
 </head>
 
 <body>
-
+ <jsp:include page="../component/header.jsp"/>
     <main>
         <div class="basket">
 
@@ -34,7 +41,7 @@
                 <ul class="ul">
                     <li class="li item item-heading">Produit(s)</li>
                     <li class="li price">Prix</li>
-                    <li class="li quantity">QuantitÃ©e(s)</li>
+                    <li class="li quantity">Quantitée(s)</li>
                     <li class="li subtotal">Sous-total</li>
                 </ul>
             </div>
@@ -93,7 +100,7 @@
             </div>
         </aside>
     </main>
-
+ <jsp:include page="../component/footer.jsp"/>
 </body>
 
 </html>

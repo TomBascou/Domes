@@ -6,7 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../asset/css/connexion.css">
+    
+    <link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/asset/css/header.css">
+<link rel="stylesheet"
+	href="${pageContext.servletContext.contextPath}/asset/css/footer.css">
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/asset/css/connexion.css">
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +25,7 @@
     <div class="header-height"></div>
    
 
-
+ <jsp:include page="../component/header.jsp"/>
     
     <main class="m-auto w-75 mt-5 container d-grid formul ">
         <form class="w-100 m-auto text-dark bg-white px-5 d-flex justify-content-center login" action ="../Login" method = "POST">
@@ -78,8 +84,6 @@
             </div>
         </div>
         </form>
-
-
           <div class="inscript text-center d-flex">
             <div class="w-75 m-auto mt-4 align-items-center text-white">
                 <h2>Pas de compte? inscrivez vous!</h2>
@@ -89,6 +93,7 @@
             </div>
           </div>
     </main>
+     <jsp:include page="../component/footer.jsp"/>
 </body>
 
 </html>
