@@ -5,8 +5,11 @@ public class Login {
 	private String password;
 	private int token;
 	
-	public Login(String string, String string2, int i) {
+	public Login(String login, String password, int token) {
 		super();
+		this.login = login;
+		this.password = password;
+		this.token = token;	
 	}
 	
 	public final String getLogin() {

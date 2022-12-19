@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("login", login);
             session.setAttribute("token", this.gestionLogin.isValid(login, password));
-            getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+            getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
         }
     }
 
